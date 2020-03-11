@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Pet from '../components/Pet';
+
+import { getPets } from '../services/pet';
 
 const Main = () => (
   <View style={styles.container}>
-    <Text>Open up App.js to start working on your app!</Text>
+    <Text>Animals:</Text>
+    {
+      getPets().map(pet => (
+        <Pet
+          key={pet.name}
+          name={pet.name}
+          age={pet.age}
+          animal={pet.animal}
+          image={pet.image}
+        />
+      ))
+    }
   </View>
 );
 
