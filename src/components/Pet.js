@@ -2,7 +2,7 @@ import React from 'react';
 import PetImage from './PetImage';
 import { View, Text } from 'react-native';
 
-import { getSentence, isDog } from '../services/pet';
+import { getSentence, isDog, getDogImage } from '../services/pet';
 
 const Pet = props => (
   <View>
@@ -12,7 +12,7 @@ const Pet = props => (
     {
       isDog(props) && (
         <PetImage
-          image={props.image}
+          image={getDogImage()}
         />
       )
     }

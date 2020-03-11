@@ -7,7 +7,6 @@ export default [
   {
     name: 'Pluto',
     animal: 'Dog',
-    image: 'https://www.nicepng.com/png/full/125-1258933_pluto-dog-mickey-mouse-drawing-clip-art-pluto.png',
     age: 11
   },
   {
