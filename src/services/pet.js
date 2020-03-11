@@ -1,4 +1,5 @@
 import pets from '../pets';
+import dog from '../../assets/dog.jpg';
 
 const constants = {
   DOG: 'Dog'
@@ -15,4 +16,4 @@ export const isDog = ({ animal }) => animal === constants.DOG;
 export const getSentence = petsProps =>
   isDog(petsProps) ? dogSentence(petsProps) : defaultSentence(petsProps);
 
-export const getDogImage = () => 'https://www.nicepng.com/png/full/125-1258933_pluto-dog-mickey-mouse-drawing-clip-art-pluto.png';
+export const getDogImage = () => dog;
