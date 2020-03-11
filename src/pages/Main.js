@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Alert } from 'react-native';
 import Pet from '../components/Pet';
 import PetForm from '../components/PetForm';
 
-import { getPets } from '../services/pet';
+import { getPets, validate } from '../services/pet';
 
 const Main = () => {
   const [ pets, setPets ] = useState(getPets());
@@ -12,10 +12,17 @@ const Main = () => {
   const [ animal, setAnimal ] = useState('');
 
   const handleAddPet = () => {
-    setPets(prevPets => [ ...prevPets, { name, age, animal } ])
-    setName('');
-    setAge('');
-    setAnimal('');
+    const pet = { name, age, animal };
+
+    validate(pet, {
+      onValidated: () => {
+        setPets(prevPets => [ ...prevPets, pet ])
+        setName('');
+        setAge('');
+        setAnimal('');
+      },
+      onError: Alert.alert
+    });
   }
 
   return (
