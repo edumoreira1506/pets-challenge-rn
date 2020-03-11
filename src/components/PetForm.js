@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, TextInput } from 'react-native';
+import { View, Button, TextInput, Text } from 'react-native';
 
 const TodoForm = ({
   name,
@@ -8,18 +8,21 @@ const TodoForm = ({
   onAdd
 }) => (
   <View>
+    <Text>Name</Text>
     <TextInput
       onChangeText={name.onChange}
       value={name.value}
       editable
       style={{ height: 40 }}
     />
+    <Text>Animal</Text>
     <TextInput
       onChangeText={animal.onChange}
       value={animal.value}
       editable
       style={{ height: 40 }}
     />
+    <Text>Age</Text>
     <TextInput
       onChangeText={age.onChange}
       value={age.value}
